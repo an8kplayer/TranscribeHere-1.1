@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steno Practice</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+
+<!-- App Icons -->
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+
+<!-- Mobile Theme Color -->
+<meta name="theme-color" content="#0d6efd">
+
+</head>
+<body>
+
+<div class="container">
+
+<h2>Steno Practice</h2>
+<div class="controls" style="margin-bottom: 15px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+    <button onclick="toggleDarkMode()" id="darkBtn">🌙 Dark Mode</button>
+    <button onclick="openKCPage()">KC Matters</button>
+</div>
+
+<div class="section">
+<label>Paste the passage here:</label>
+<textarea id="passageInput" placeholder="Paste your practice text..."></textarea>
+</div>
+
+<div class="section">
+<label>Time Limit (minutes):</label>
+<input type="number" id="timeInput" value="5" min="1" max="60">
+</div>
+
+<div class="buttons">
+<button onclick="savePassage()">Save Passage</button>
+<button onclick="startTest()" style="background:green; color:white; font-weight:bold;">Start Test</button>
+</div>
+
+<hr>
+
+<h3>Saved Passages</h3>
+<div id="savedPassages"></div>
+
+<hr>
+
+<h3>Attempt History</h3>
+<div id="history"></div>
+
+</div>
+<script src="script.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js");
+}
+</script>
+
+  <div class="dev-footer">
+    Developed by <b>Anand K. Singh 🌼</b>
+</div>
+  
+</body>
+</html>

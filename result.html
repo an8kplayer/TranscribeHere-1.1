@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Result - Steno Practice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h2>Result & Analysis</h2>
+
+<div id="resultBox"></div>
+
+<hr>
+
+<h3>Comparison</h3>
+<div style="display:flex; gap:10px;">
+  <div style="width:50%; height:400px; overflow:auto; border:1px solid #ccc; padding:8px;" id="originalBox"></div>
+  <div style="width:50%; height:400px; overflow:auto; border:1px solid #ccc; padding:8px;" id="typedBox"></div>
+</div>
+
+<div class="buttons">
+<button onclick="retryTest()">Retry</button>
+<button onclick="goHome()">Home</button>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
