@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Result - Steno Practice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h2>Result & Analysis</h2>
+
+<div id="resultBox"></div>
+
+<hr>
+
+<h3>Comparison</h3>
+<div class="comparison-legend" aria-label="Comparison colour guide">
+  <span class="legend-item"><span class="legend-omitted">Red text</span> — Omitted word</span>
+  <span class="legend-item"><span class="legend-wrong">Yellow highlight</span> — Wrong word</span>
+  <span class="legend-item"><span class="legend-typed">Blue underline</span> — Typed mistake</span>
+</div>
+<div class="comparison-boxes">
+  <div class="comparison-box" id="originalBox"></div>
+  <div class="comparison-box" id="typedBox"></div>
+</div>
+
+<div class="buttons">
+<button onclick="retryTest()">Retry</button>
+<button onclick="goHome()">Home</button>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

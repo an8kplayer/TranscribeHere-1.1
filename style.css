@@ -1,0 +1,247 @@
+:root {
+    --base-font-size: 18px;
+    --gui-scale: 1;
+}
+
+body {
+    font-family: Arial;
+    background: #f0f0f0;
+    padding: 20px;
+    font-size: var(--base-font-size);
+    transition: transform 0.2s ease-in-out;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+    font-size: var(--base-font-size);
+}
+
+input {
+    font-size: var(--base-font-size);
+    padding: 10px;
+}
+
+button {
+    font-size: var(--base-font-size);
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* ===== CLEAN DARK MODE ===== */
+
+body.dark {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Main page container */
+body.dark .container {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    color: #e0e0e0;
+}
+
+/* Headings */
+body.dark h2, body.dark h3 {
+    color: #ffffff;
+}
+
+/* Textareas and inputs */
+body.dark textarea,
+body.dark input {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border: 1px solid #444;
+}
+
+/* Buttons (default) */
+body.dark button {
+    background-color: #3d3d3d;
+    color: #ffffff;
+    border: 1px solid #555;
+}
+
+/* Keep Start Test button green */
+body.dark button[style*="green"] {
+    background-color: #2e7d32 !important;
+    color: white !important;
+}
+
+/* Saved passages and history boxes */
+body.dark #savedPassages div,
+body.dark #history div {
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+    color: #e0e0e0;
+}
+
+/* Comparison boxes in result page */
+body.dark #originalBox,
+body.dark #typedBox {
+    background-color: #2d2d2d;
+    border: 1px solid #444 !important;
+    color: #ffffff;
+}
+
+/* Result comparison markers */
+.omitted-word {
+    color: #d32f2f;
+    font-weight: 600;
+}
+
+.wrong-word {
+    background-color: #fff176;
+}
+
+.typed-mistake {
+    text-decoration-line: underline;
+    text-decoration-color: #1565c0;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+}
+
+/* Highlight colors for dark mode */
+body.dark .wrong-word {
+    background-color: #ffd600 !important;
+    color: #000000 !important;
+}
+
+body.dark .typed-mistake {
+    text-decoration-color: #64b5f6 !important;
+}
+
+body.dark .omitted-word {
+    color: #ff5252 !important;
+}
+
+.dev-footer {
+    position: fixed;
+    bottom: 8px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-align: center;
+    font-size: 13px;
+    color: #777;
+    letter-spacing: 0.4px;
+    opacity: 0.9;
+    z-index: 999;
+
+    width: max-content;
+}
+
+body.dark .dev-footer {
+    color: #aaa;
+}
+
+body {
+    padding-bottom: 35px;
+}
+
+/* Responsive GUI scaling and comparison layout */
+body {
+    zoom: var(--gui-scale);
+    overflow-x: hidden;
+}
+
+.comparison-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin: 10px 0 14px;
+    padding: 8px 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    font-size: 0.9em;
+    line-height: 1.5;
+    background: #fafafa;
+}
+
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.legend-omitted {
+    color: #d32f2f;
+    font-weight: 600;
+}
+
+.legend-wrong {
+    background-color: #fff176;
+    padding: 1px 3px;
+    border-radius: 2px;
+}
+
+.legend-typed {
+    text-decoration-line: underline;
+    text-decoration-color: #1565c0;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+}
+
+.comparison-boxes {
+    display: flex;
+    gap: 10px;
+}
+
+.comparison-box {
+    width: 50%;
+    height: 400px;
+    overflow: auto;
+    border: 1px solid #ccc;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+body.dark .comparison-legend {
+    background-color: #2d2d2d;
+    border-color: #444;
+}
+
+body.dark .legend-wrong {
+    background-color: #ffd600;
+    color: #000;
+}
+
+body.dark .legend-typed {
+    text-decoration-color: #64b5f6;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 12px;
+    }
+
+    .comparison-boxes {
+        flex-direction: column;
+    }
+
+    .comparison-box {
+        width: 100%;
+        height: 280px;
+    }
+
+    .comparison-legend {
+        gap: 6px 12px;
+        font-size: 0.85em;
+    }
+}
