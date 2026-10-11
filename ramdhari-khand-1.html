@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>रामधारी खंड 1 - Steno Practice</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body.dark .matter-item { background:#2d2d2d; color:#fff; border-color:#444; }
+.ramdhari-page .container { max-width:1400px; }
+.ramdhari-search { margin:18px 0 20px; }
+.ramdhari-search label { display:block; margin-bottom:8px; font-weight:600; }
+#matterSearch { width:100%; box-sizing:border-box; margin:0; }
+#mattersList { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+.matter-item { border:1px solid #ccc; padding:12px; margin:0; border-radius:7px; cursor:pointer; transition:background .2s,border-color .2s; display:block; width:100%; box-sizing:border-box; text-align:left; min-height:48px; }
+.matter-item:hover { background:#f0f0f0; }
+body.dark .matter-item:hover { background:#383838; }
+@media(max-width:1000px){#mattersList{grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media(max-width:700px){#mattersList{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}}
+@media(max-width:430px){#mattersList{grid-template-columns:1fr;}}
+</style>
+</head>
+<body class="ramdhari-page">
+<div class="container">
+<h2>रामधारी खंड 1</h2>
+<button onclick="goHome()">Home</button>
+<div class="ramdhari-search">
+<label for="matterSearch">Search transcription:</label>
+<input type="search" id="matterSearch" placeholder="Search by transcription number or name..." autocomplete="off">
+</div>
+<div id="mattersList"></div>
+</div>
+<script src="./script.js"></script>
+<script src="./ramdhari-khand-1-data.js"></script>
+<script>
+// Page logic only. Transcription content lives in ramdhari-khand-1-data.js.
+const list = document.getElementById("mattersList");
+const searchInput = document.getElementById("matterSearch");
+
+function renderRamdhariMatters(query = "") {
+  const search = query.trim().toLocaleLowerCase();
+  const matches = RAMDHARI_MATTERS.filter((matter) => {
+    const number = matter.name.match(/\d+/)?.[0] || "";
+    return !search || matter.name.toLocaleLowerCase().includes(search) || number.includes(search);
+  });
+
+  list.replaceChildren();
+
+  if (matches.length === 0) {
+    const emptyMessage = document.createElement("p");
+    emptyMessage.textContent = "No matching transcriptions found.";
+    list.appendChild(emptyMessage);
+    return;
+  }
+
+  matches.forEach((matter) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "matter-item";
+    button.textContent = matter.name;
+    button.addEventListener("click", () => selectMatter(matter.text, matter.name));
+    list.appendChild(button);
+  });
+}
+
+searchInput.addEventListener("input", () => renderRamdhariMatters(searchInput.value));
+renderRamdhariMatters();
+
+if (localStorage.getItem("darkMode") === "on") {
+  document.body.classList.add("dark");
+}
+</script>
+</body>
+</html>
