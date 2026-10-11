@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>रामधारी खंड 1 - Steno Practice</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body.dark .matter-item { background:#2d2d2d; color:#fff; border-color:#444; }
+.matter-page .container { max-width:1400px; }
+.matter-search { margin:18px 0 20px; }
+.matter-search label { display:block; margin-bottom:8px; font-weight:600; }
+#matterSearch { width:100%; box-sizing:border-box; margin:0; }
+#mattersList {
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0, 1fr));
+  gap:12px;
+}
+.matter-item {
+  border:1px solid #ccc; padding:12px; margin:0; border-radius:7px;
+  cursor:pointer; transition:background 0.2s, border-color 0.2s;
+  display:block; width:100%; box-sizing:border-box;
+  text-align:left; min-height:48px;
+}
+.matter-item:hover { background:#f0f0f0; }
+body.dark .matter-item:hover { background:#383838; }
+@media (max-width:1000px) {
+  #mattersList { grid-template-columns:repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width:700px) {
+  #mattersList { grid-template-columns:repeat(2, minmax(0, 1fr)); gap:10px; }
+}
+@media (max-width:430px) {
+  #mattersList { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body class="matter-page">
+<div class="container">
+<h2>रामधारी खंड 1</h2>
+<button type="button" onclick="goHome()">Home</button>
+
+<div class="matter-search">
+  <label for="matterSearch">Search transcription:</label>
+  <input type="search" id="matterSearch" placeholder="Search by transcription number or name..." autocomplete="off">
+</div>
+
+<div id="mattersList">
+  <!-- Transcription buttons are generated from RAMDHARI_MATTERS below. -->
+</div>
+</div>
+
+<script src="./script.js"></script>
+<script>
+// Add new transcriptions here. Keep each entry in the same { name, text } format.
+const RAMDHARI_MATTERS = [
+  { name: "संख्या 1", text: "123" },
+  { name: "संख्या 2", text: "123" },
+  { name: "संख्या 3", text: "123" },
+  { name: "संख्या 4", text: "123" },
+  { name: "संख्या 5", text: "123" },
+  { name: "संख्या 6", text: "123" },
+  { name: "संख्या 7", text: "123" },
+  { name: "संख्या 8", text: "123" },
+  { name: "संख्या 9", text: "123" },
+  { name: "संख्या 10", text: "123" },
+  { name: "संख्या 11", text: "123" },
+  { name: "संख्या 12", text: "123" },
+  { name: "संख्या 13", text: "123" },
+  { name: "संख्या 14", text: "123" },
+  { name: "संख्या 15", text: "123" },
+  { name: "संख्या 16", text: "123" },
+  { name: "संख्या 17", text: "123" },
+  { name: "संख्या 18", text: "123" },
+  { name: "संख्या 19", text: "123" },
+  { name: "संख्या 20", text: "123" },
+  { name: "संख्या 21", text: "123" },
+  { name: "संख्या 22", text: "123" },
+  { name: "संख्या 23", text: "123" },
+  { name: "संख्या 24", text: "123" },
+  { name: "संख्या 25", text: "123" },
+  { name: "संख्या 26", text: "123" },
+  { name: "संख्या 27", text: "123" },
+  { name: "संख्या 28", text: "123" },
+  { name: "संख्या 29", text: "123" },
+  { name: "संख्या 30", text: "123" },
+  { name: "संख्या 31", text: "123" },
+  { name: "संख्या 32", text: "123" },
+  { name: "संख्या 33", text: "123" },
+  { name: "संख्या 34", text: "123" },
+  { name: "संख्या 35", text: "123" },
+  { name: "संख्या 36", text: "123" },
+  { name: "संख्या 37", text: "123" },
+  { name: "संख्या 38", text: "123" },
+  { name: "संख्या 39", text: "123" },
+  { name: "संख्या 40", text: "123" },
+  { name: "संख्या 41", text: "123" },
+  { name: "संख्या 42", text: "123" },
+  { name: "संख्या 43", text: "123" },
+  { name: "संख्या 44", text: "123" },
+  { name: "संख्या 45", text: "123" },
+  { name: "संख्या 46", text: "123" },
+  { name: "संख्या 47", text: "123" },
+  { name: "संख्या 48", text: "123" },
+  { name: "संख्या 49", text: "123" },
+  { name: "संख्या 50", text: "123" },
+  { name: "संख्या 51", text: "123" },
+  { name: "संख्या 52", text: "123" },
+  { name: "संख्या 53", text: "123" },
+  { name: "संख्या 54", text: "123" },
+  { name: "संख्या 55", text: "123" },
+  { name: "संख्या 56", text: "123" },
+  { name: "संख्या 57", text: "123" },
+  { name: "संख्या 58", text: "123" },
+  { name: "संख्या 59", text: "123" },
+  { name: "संख्या 60", text: "123" },
+  { name: "संख्या 61", text: "123" },
+  { name: "संख्या 62", text: "123" },
+  { name: "संख्या 63", text: "123" },
+  { name: "संख्या 64", text: "123" },
+  { name: "संख्या 65", text: "123" },
+  { name: "संख्या 66", text: "123" },
+  { name: "संख्या 67", text: "123" },
+  { name: "संख्या 68", text: "123" },
+  { name: "संख्या 69", text: "123" },
+  { name: "संख्या 70", text: "123" },
+  { name: "संख्या 71", text: "123" },
+  { name: "संख्या 72", text: "123" },
+  { name: "संख्या 73", text: "123" },
+  { name: "संख्या 74", text: "123" },
+  { name: "संख्या 75", text: "123" },
+  { name: "संख्या 76", text: "123" },
+  { name: "संख्या 77", text: "123" },
+  { name: "संख्या 78", text: "123" },
+  { name: "संख्या 79", text: "123" },
+  { name: "संख्या 80", text: "123" },
+  { name: "संख्या 81", text: "123" },
+  { name: "संख्या 82", text: "123" },
+  { name: "संख्या 83", text: "123" },
+  { name: "संख्या 84", text: "123" },
+  { name: "संख्या 85", text: "123" },
+  { name: "संख्या 86", text: "123" },
+  { name: "संख्या 87", text: "123" },
+  { name: "संख्या 88", text: "123" },
+  { name: "संख्या 89", text: "123" },
+  { name: "संख्या 90", text: "123" },
+  { name: "संख्या 91", text: "123" },
+  { name: "संख्या 92", text: "123" },
+  { name: "संख्या 93", text: "123" },
+  { name: "संख्या 94", text: "123" },
+  { name: "संख्या 95", text: "123" },
+  { name: "संख्या 96", text: "123" },
+  { name: "संख्या 97", text: "123" },
+  { name: "संख्या 98", text: "123" },
+  { name: "संख्या 99", text: "123" },
+  { name: "संख्या 100", text: "123" }
+];
+
+const list = document.getElementById('mattersList');
+const searchInput = document.getElementById('matterSearch');
+
+function renderMatters(query = '') {
+  const search = query.trim().toLowerCase();
+  list.replaceChildren();
+
+  const matches = RAMDHARI_MATTERS.filter((matter) => {
+    const number = matter.name.match(/\d+/)?.[0] || '';
+    return !search || matter.name.toLowerCase().includes(search) || number.includes(search);
+  });
+
+  matches.forEach((matter) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'matter-item';
+    button.textContent = matter.name;
+    button.onclick = () => selectMatter(matter.text, matter.name);
+    list.appendChild(button);
+  });
+
+  if (!matches.length) {
+    const empty = document.createElement('p');
+    empty.textContent = 'No matching transcriptions found.';
+    list.appendChild(empty);
+  }
+}
+
+searchInput.addEventListener('input', () => renderMatters(searchInput.value));
+renderMatters();
+
+// Apply the same saved dark-mode preference used by KC Matters.
+if (localStorage.getItem('darkMode') === 'on') document.body.classList.add('dark');
+</script>
+</body>
+</html>
